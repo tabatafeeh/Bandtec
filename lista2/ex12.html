@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 12</title>
+</head>
+<body>
+    <h1>Brasil X Alemanha</h1>
+    <br>
+    <button onclick="brasil()">Gol do Brasil</button>
+    <button onclick="alemanha()">Gol da Alemanha</button>
+    <br>
+    <br>
+    <b>Tempo real do jogo:</b>
+    <div id="gols"></div>
+</body>
+</html>
+
+<script>
+    function brasil() {
+        gols.innerHTML += "<br><b style='color: green'>É goooolll do Brasil!!!</b>";
+    }
+
+    function alemanha() {
+        gols.innerHTML += "<br><b style='background-color: red; color: yellow; width: 200px'>É goooolll da Alemanha!!!</b>"
+    }
+</script>
