@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 13</title>
+</head>
+<body>
+    <p>Digite a quantidade de horas que você dormiu:</p>
+    <input type="text" id="horas">
+    <br><br>
+    <button onclick="calcular()">Calcular Sono</button>
+    <br>
+    <p id="res"></p>
+</body>
+</html>
+
+<script>
+    function calcular(){
+        var fase1 = Number(horas.value) * 0.05;
+        var fase2 = Number(horas.value) * 0.45;
+        var fase3 = Number(horas.value) * 0.30;
+        var rem = Number(horas.value) * 0.20;
+
+        res.innerHTML = `Ao dormir ${horas.value}, você dormiu:<br>
+                        ${fase1.toFixed(2)} horas na fase 1<br>
+                        ${fase2.toFixed(2)} horas na fase 2<br>
+                        ${fase3.toFixed(2)} horas na fase 3<br>
+                        ${rem.toFixed(2)} horas na fase REM`;
+    }
+</script>

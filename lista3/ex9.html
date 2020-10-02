@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9</title>
+</head>
+<body>
+    <p>Digite a sua quantidade de filhos:</p>
+    <input type="text"  id="filhos">
+    <br><br>
+    <button onclick="calcular()">Calcular Auxílio Filhos</button>
+    <p id="res"></p>
+</body>
+</html>
+
+<script>
+    function calcular(){
+        var auxFilhos = Number(filhos.value) * 25;
+        res.innerHTML = `Você tem ${Number(filhos.value)} filhos, logo, seu "Auxílio Filhos" será de R$${auxFilhos.toFixed(2)}`;
+    }
+</script>

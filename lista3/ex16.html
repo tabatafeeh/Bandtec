@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 16</title>
+</head>
+<body>
+    <p>Digite um número para ver sua tabuada:</p>
+    <input type="text" id="numero">
+    <br><br>
+    <button onclick="tabuada()">Ver Tabuada</button>
+    <p id="res"></p>
+</body>
+</html>
+
+<script>
+    function tabuada(){
+        var n = Number(numero.value);
+        res.innerHTML = `${n} x 1 = ${n * 1}<br>
+                        ${n} x 2 = ${n * 2}<br>
+                        ${n} x 3 = ${n * 3}<br>
+                        ${n} x 4 = ${n * 4}<br>
+                        ${n} x 5 = ${n * 5}<br>
+                        ${n} x 6 = ${n * 6}<br>
+                        ${n} x 7 = ${n * 7}<br>
+                        ${n} x 8 = ${n * 8}<br>
+                        ${n} x 9 = ${n * 9}`;
+    }
+</script>

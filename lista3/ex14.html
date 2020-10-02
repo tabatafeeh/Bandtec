@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14</title>
+</head>
+<body>
+    <p>Digite a quantidade de votos que Zé Buduia recebeu nessa eleição:</p>
+    <input type="text" id="ze">
+    <p>Digite a quantidade de votos que Maria Bigodenha recebeu nessa eleição:</p>
+    <input type="text" id="maria">
+    <p>Digite a quantidade de votos brancos que houveram nessa eleição:</p>
+    <input type="text" id="brancos">
+    <p>Digite a quantidade de votos nulos que houveram nessa eleição:</p>
+    <input type="text" id="nulos">
+    <br><br>
+    <button onclick="calcular()">Resultado da Eleição</button>
+    <p id="res"></p>
+</body>
+</html>
+
+<script>
+    function calcular(){
+        var totVotos = Number(ze.value) + Number(maria.value) + Number(brancos.value) + Number(nulos.value);
+        var vZe = (Number(ze.value) / totVotos) * 100;
+        var vMaria = (Number(maria.value) / totVotos) * 100;
+        var vBrancos = (Number(brancos.value) / totVotos) * 100;
+        var vNulos = (Number(nulos.value) / totVotos) * 100;
+        res.innerHTML = `Total de votos: <u>${totVotos}</u><br>
+                        Zé Buduia: ${vZe.toFixed(0)}% (${ze.value})<br>
+                        Maria Budenha: ${vMaria.toFixed(0)}% (${maria.value})<br>
+                        Inválidos: ${(vBrancos + vNulos).toFixed(0)}% (${Number(brancos.value) + Number(nulos.value)} votos)`;
+    }
+</script>
