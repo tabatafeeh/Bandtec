@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Digite o valor da base do triangulo:</p>
+    <input type="text" id="base">
+    <br><br>
+    <button onclick="calcular()">Calcular</button>
+    <br><br>
+    <p id="res" style="color: black;"></p>
+</body>
+</html>
+
+<script>
+    function calcular(){
+        var baseTri = Number(base.value);
+        var alturaTri = (2 * baseTri) - 1;
+        var ladoH = (baseTri * 3) + 1;
+        var ladoV = (baseTri * 2) + 1;
+        var areaTri = baseTri * (alturaTri / 2);
+        var areaRet = ladoV * ladoH;
+
+        res.innerHTML = `<span style='background-color: green;'>A área verde é de <b><u>${areaRet - areaTri} m2</u></b></span>, 
+                        <span style='color: orange;'>pois o triangulo tem área de <b><u>${areaTri.toFixed(0)} m2</u></b></span> 
+                        e o <span style='color: green;'>retângulo tem área de <b>${areaRet.toFixed(0)} m2</b></span>`;
+
+    }
+</script>
