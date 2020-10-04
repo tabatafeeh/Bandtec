@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 6</title>
+</head>
+<body>
+    <p>Digite a quantidade de kWh consumida no mês</p>
+    <input type="text" name="kwh" id="kwh">
+    <br><br>
+    <button onclick="calcular()">Calcular Luz</button>
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var conta = kwh.value * 0.85;
+        // console.log(conta);
+        if (kwh.value < 100){
+            conta -= conta * 0.1;
+        }
+        alert(`O valor da conta é: R$${conta.toFixed(2)}`);
+    }
+</script>
