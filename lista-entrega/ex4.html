@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+<body>
+    <p>Selecione o time que você torce:</p>
+    <select onchange="verTime()" name="times" id="times">
+        <option value="0">Fale sobre esse time</option>
+        <option value="1">Corinthians</option>
+        <option value="2">Palmeiras</option>
+        <option value="3">Santos</option>
+        <option value="4">São Paulo</option>
+    </select>
+    <br><br>
+    <p id="resp"></p>
+    
+    <script>
+        function verTime(){
+            escolha = times.value;
+            if (escolha == 0){
+    
+            }
+            else if (escolha == 1) {
+                resp.innerHTML = `Salve o Corinthians`;
+                resp.style = 'background-color: black; color: white; ';
+            } 
+            else if (escolha == 2){
+                resp.innerHTML = `Salve o Alviverde imponente!`;
+                resp.style = 'background-color: green; color: white;';
+            }
+            else if (escolha == 3){
+                resp.innerHTML = `Agora que dá a bola é o Santos`;
+                resp.style = 'background-color: white; color: black;';
+            }        
+            else {
+                resp.innerHTML = `Salve o Tricolor paulista`;
+                resp.style = 'background-color: red; color: black;';
+            }
+        }
+    </script>
+</body>
+</html>
+

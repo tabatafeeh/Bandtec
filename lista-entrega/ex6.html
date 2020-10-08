@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 6</title>
+</head>
+<body>
+    <p>Digite quantos pães franceses você comeu por dia:</p>
+    <input type="text" id="paes">
+    <p>Digite quantos pacotes de bolacha recheada você comeu por dia:</p>
+    <input type="text" id="bolacha">
+    <p>Digite quantos copos de achocolatado você tomou por dia:</p>
+    <input type="text" id="achocolatado">
+    <br><br>
+    <button onclick="verificar()">Verificar calorias</button>
+    <p id="resp"></p>
+    <img src="" alt="" id="imagem">
+
+
+    <script>
+        function verificar(){
+            var cBolacha = Number(bolacha.value);
+            var cPaes = Number(paes.value);
+            var cChoc = Number(achocolatado.value);
+            var calorias = cPaes * 50 + cBolacha * 80 + cChoc * 70;
+
+            if (calorias < 200){
+                resp.innerHTML = "Parabéns, vai sair em forma da quarentena!";
+                imagem.src = 'img/pessoa-em-forma.jpg';
+            }
+            else if (calorias >= 200 && calorias <= 400){
+                resp.innerHTML = `Cuidado, vai ficar mais "fofinho(a)" após quarentena!` ;
+                imagem.src = 'img/pessoa-acima-do-peso.jpg';
+            }
+            else{
+                imagem.src = 'img/pessoa-mt-acima-do-peso.jpg';
+                resp.innerHTML = "Bom, acho que muitos não vão te reconhecer após a quarentena";
+            }
+
+        }
+    </script>
+</body>
+</html>

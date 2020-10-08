@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+</head>
+<body>
+    <button onclick="contar()">Clica neu</button>
+    <p id="resp">Você já clicou 0 vezes.</p>
+    <p id="frase"></p>
+
+    <script>
+        var contador = 0;
+
+        function contar(){
+            contador += 1;
+            resp.innerHTML = `Você já clicou ${contador} vezes`;
+            
+            if (contador < 5) {
+                frase.innerHTML = "Dedo fraquinho, hein";
+            }
+            else if (contador >= 5 && contador <= 10){
+                frase.innerHTML = "Dedo bom, mano";
+            }
+            else if (contador >= 11 && contador <= 15) {
+                frase.innerHTML = "Gosta de clicar, hein!";
+            }
+            else {
+                frase.innerHTML = "Eita dedo nervoso!";
+            }
+        }
+    </script>
+
+</body>
+</html>

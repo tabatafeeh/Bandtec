@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9</title>
+</head>
+<body>
+    <button onclick="nt1()">Nota 1</button>
+    <button onclick="nt2()">Nota 2</button>
+    <button onclick="nt3()">Nota 3</button>
+    <button onclick="nt4()">Nota 4</button>
+    <button onclick="nt5()">Nota 5</button>
+    <br><br>
+    <p id="resp">Sua avaliação: </p>
+
+    <script>
+        var nota1 = 0;
+        var nota2 = 0;
+        var nota3 = 0;
+        var nota4 = 0;
+        var nota5 = 0;
+        var media = 0;
+
+
+        function nt1(){
+            nota1++;
+            media = (nota1 + nota2 + nota3 + nota4 + nota5) / 5;
+            resp.innerHTML = `Sua avaliação: ${media.toFixed(1)}`;
+        }
+
+        function nt2(){
+            nota2 += 1;
+            media = (nota1 + nota2 + nota3 + nota4 + nota5) / 5;
+            resp.innerHTML = `Sua avaliação: ${media.toFixed(1)}`;
+        }
+
+        function nt3(){
+            nota3 += 1;
+            media = (nota1 + nota2 + nota3 + nota4 + nota5) / 5;
+            resp.innerHTML = `Sua avaliação: ${media.toFixed(1)}`;
+        }
+
+        function nt4(){
+            nota4 += 1;
+            media = (nota1 + nota2 + nota3 + nota4 + nota5) / 5;
+            resp.innerHTML = `Sua avaliação: ${media.toFixed(1)}`;
+        }
+
+        function nt5(){
+            nota5 += 1;
+            media = (nota1 + nota2 + nota3 + nota4 + nota5) / 5;
+            resp.innerHTML = `Sua avaliação: ${media.toFixed(1)}`;
+        }
+
+    </script>
+</body>
+</html>

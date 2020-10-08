@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7</title>
+</head>
+<body>
+    <select onchange="verEstacao()" name="meses" id="meses">
+        <option value="0">-- Escolha um mês --</option>
+        <option value="1">Janeiro</option>
+        <option value="2">Fevereiro</option>
+        <option value="3">Março</option>
+        <option value="4">Abril</option>
+        <option value="5">Maio</option>
+        <option value="6">Junho</option>
+        <option value="7">Julho</option>
+        <option value="8">Agosto</option>
+        <option value="9">Setembro</option>
+        <option value="10">Outubro</option>
+        <option value="11">Novembro</option>
+        <option value="12">Dezembro</option>
+    </select>
+    <p id="resp"></p>
+    <img id="imagem" src="" alt="" width="300px">
+
+    <script>
+        function verEstacao(){
+            var mes = meses.value;
+            if (mes >= 3 && mes <= 5){
+                resp.innerHTML = 'Primavera';
+                imagem.src = 'img/primavera.jpg';
+            }
+            else if (mes >= 6 && mes <= 8){
+                resp.innerHTML = 'Verão';
+                imagem.src = 'img/verao.jpg';
+            }
+            else if (mes >= 9 && mes <= 11){
+                resp.innerHTML = 'Outono';
+                imagem.src = 'img/outono.jpeg';
+            }
+            else {
+                resp.innerHTML = 'Inverno'
+                imagem.src = 'img/inverno.jpg';
+            }
+        }
+    </script>
+</body>
+</html>
