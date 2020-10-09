@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4E</title>
+</head>
+<body>
+    <p>Digite o tempo (em anos) que o rapaz trabalhou:</p>
+    <input type="text" id="anosTrabalho">
+    <p>Digite a quantidade (em quilos) de trigo que suas plantações renderam:</p>
+    <input type="text" id="kgTrigo">
+    <p>Digite a quantidade de dias que o rapaz faltou ao trabalho por estar doente:</p>
+    <input type="text" id="faltas">
+    <br><br>
+    <button onclick="verificar()">Deu match?</button>
+    <br><br>
+    <p id="resp"></p>
+    <img src="" alt="" id="imagem">
+
+    <script>
+        function verificar() {
+            if (anosTrabalho.value >= 5 && kgTrigo.value >= 300 && faltas.value <= 5) {
+                resp.innerHTML = `Minha filha será sua!`;
+            } 
+            else {
+                resp.innerHTML = `Deu ruim! Trabalhe mais 2 anos`;   
+                imagem.src = 'img/bravo.jpg';
+            }
+        }
+    </script>
+</body>
+</html>

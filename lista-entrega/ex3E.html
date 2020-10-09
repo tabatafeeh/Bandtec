@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3E</title>
+</head>
+<body>
+    <select name="manha" id="manha">
+        <option value="0">-- O que você come no café da manhã? --</option>
+        <option value="1">Ovos</option>
+        <option value="2">Leite de arroz</option>
+        <option value="3">Bacon</option>
+    </select>
+    <br><br>
+    <select name="almoco" id="almoco">
+        <option value="0">-- O que você come no almoço? --</option>
+        <option value="1">Bife</option>
+        <option value="2">Hambúrguer de soja</option>
+        <option value="3">Frango grelhado</option>
+    </select>
+    <br><br>
+    <select name="janta" id="janta">
+        <option value="0">-- O que você come na janta? --</option>
+        <option value="1">Picanha de soja</option>
+        <option value="2">Cupim</option>
+        <option value="3">Coração</option>
+    </select>
+    <br><br>
+    <button onclick="verificar()">Sou vegano?</button>
+
+    <script>
+        function verificar() {
+            if (manha.value == 2 && almoco.value == 2 && janta.value == 1) {
+                alert("Você é vegano!");
+            }
+            else {
+                alert("Não, você não é vegano");
+            }
+        }
+    </script>
+</body>
+</html>

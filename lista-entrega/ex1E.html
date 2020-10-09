@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1E</title>
+</head>
+<body>
+    <p>Digite a sua renda:</p>
+    <input type="text" name="renda" id="renda">
+    <p>Digite a sua renda total familiar:</p>
+    <input type="text" name="rendaF" id="rendaF">
+    <br><br>
+    <button onclick="verificar()">Verificar ajuda</button>
+
+    <script>
+        function verificar(){
+            if (renda.value <= 1050 && rendaF.value <= 2100) {
+                alert( "Você terá direito!");
+            }
+            else {
+                alert("Você NÃO terá direito");
+            }
+        }
+    </script>
+</body>
+</html>
