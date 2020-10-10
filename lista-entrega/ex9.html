@@ -6,53 +6,37 @@
     <title>Exercício 9</title>
 </head>
 <body>
-    <button onclick="nt1()">Nota 1</button>
-    <button onclick="nt2()">Nota 2</button>
-    <button onclick="nt3()">Nota 3</button>
-    <button onclick="nt4()">Nota 4</button>
-    <button onclick="nt5()">Nota 5</button>
+    <button onclick="nt()">Nota 1</button>
+    <button onclick="nt()">Nota 2</button>
+    <button onclick="nt()">Nota 3</button>
+    <button onclick="nt()">Nota 4</button>
+    <button onclick="nt()">Nota 5</button>
     <br><br>
     <p id="resp">Sua avaliação: </p>
+    <img id='imagem' src="" alt="" style="width: 300px;">
 
     <script>
-        var nota1 = 0;
-        var nota2 = 0;
-        var nota3 = 0;
-        var nota4 = 0;
-        var nota5 = 0;
+        var nota = 0;
         var media = 0;
 
-
-        function nt1(){
-            nota1++;
-            media = (nota1 + nota2 + nota3 + nota4 + nota5) / 5;
+        function nt(){
+            nota++;
+            media = nota / 5;
             resp.innerHTML = `Sua avaliação: ${media.toFixed(1)}`;
-        }
 
-        function nt2(){
-            nota2 += 1;
-            media = (nota1 + nota2 + nota3 + nota4 + nota5) / 5;
-            resp.innerHTML = `Sua avaliação: ${media.toFixed(1)}`;
-        }
-
-        function nt3(){
-            nota3 += 1;
-            media = (nota1 + nota2 + nota3 + nota4 + nota5) / 5;
-            resp.innerHTML = `Sua avaliação: ${media.toFixed(1)}`;
-        }
-
-        function nt4(){
-            nota4 += 1;
-            media = (nota1 + nota2 + nota3 + nota4 + nota5) / 5;
-            resp.innerHTML = `Sua avaliação: ${media.toFixed(1)}`;
-        }
-
-        function nt5(){
-            nota5 += 1;
-            media = (nota1 + nota2 + nota3 + nota4 + nota5) / 5;
-            resp.innerHTML = `Sua avaliação: ${media.toFixed(1)}`;
-        }
-
+            if (media < 2) {
+                imagem.src = 'img/chorando.jpg';
+            } 
+            else if (media >= 2 && media <= 3) {
+                imagem.src = 'img/neutro.jpg';
+            }
+            else if (media > 3 && media <= 4.5) {
+                imagem.src = 'img/feliz.jpg';
+            }
+            else {
+                imagem.src = 'img/muitofeliz.png';
+            }
+        }        
     </script>
 </body>
 </html>
