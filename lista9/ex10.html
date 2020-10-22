@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Jogador 1: <Span id="j1">0</Span><br>Jogador 2: <Span id="j2">0</Span><br>Empate: <Span id="emp">0</Span></p>
+    <button onclick="jogar()">Jogar</button>
+
+    <script>
+        v1 = 0;
+        v2 = 0;
+        empate = 0;
+
+        function jogar() {
+            var dado1 = Math.trunc((Math.random() * 6) + 1);
+            var dado2 = Math.trunc((Math.random() * 6) + 1);
+            console.log(dado1,dado2)
+
+            if (dado1 > dado2) {
+                v1++;
+            }
+            else if (dado1 < dado2) {
+                v2++;
+            }
+            else {
+                empate++;
+            }
+
+            j1.innerHTML = v1;
+            j2.innerHTML = v2;
+            emp.innerHTML = empate;
+
+            if (v1 > v2) {
+                alert(`O jogador 1 está vencendo`);
+            }
+            else if (v2 > v1) {
+                alert(`O jogador 2 está vencendo`);
+            }
+            else if (empate > v1 && empate > v2) {
+                alert(`Jogo empatado`);
+            }
+        }
+    </script>
+</body>
+</html>

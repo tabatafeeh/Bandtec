@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 9</title>
+</head>
+<body>
+    <p>Numeros pares: <b id="par">0</b><br>Numeros impares: <b id="impar">0</b></p>
+    <button onclick="sortear()">Sortear numero</button>
+
+    <script>
+        pares = 0;
+        impares = 0;
+
+        function sortear() {
+            var n = Math.trunc(Math.random() * 10);
+
+            if (n % 2 == 0) {
+                pares++;
+            }
+            else {
+                impares++;
+            }
+
+            par.innerHTML = pares;
+            impar.innerHTML = impares;
+        }
+    </script>
+</body>
+</html>

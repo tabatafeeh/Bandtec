@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 8</title>
+</head>
+<body>
+    <input type="text" id="numero">
+    <br><br>
+    <button onclick="verificar()">É divisível por 7?</button>
+    
+    <script>
+        function verificar() {
+            var n = Number(numero.value);
+            n % 7 == 0 ? alert("Sim, é") : alert("Não, não é");
+        }
+    </script>
+</body>
+</html>

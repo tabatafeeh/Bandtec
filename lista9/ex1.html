@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+<body>
+    <button onclick="gerarNota()">Gerar uma nota de aluno entre 0 E 10</button>
+    <p id="notaGerada"></p>
+    <br>
+    <button onclick="gerarFreq()">Gerar uma frequência de aluno entre 0 e 100</button>
+    <p id="freqGerada"></p>
+
+    <script>
+        function gerarNota() {
+            var nota = (Math.random() * 11).toFixed(2);
+
+            if (nota >= 10) {
+                nota = 10.00;
+                notaGerada.innerHTML = `Nota gerada: ${nota}.00`;
+            }
+            else {
+                notaGerada.innerHTML = `Nota gerada: ${nota}`;
+            }
+        }
+
+        function gerarFreq() {
+            var freq = (Math.random() * 101).toFixed(2);
+            if (freq >= 100) {
+                freq = 100;
+                freqGerada.innerHTML = `Frequencia gerada: ${freq}.00`;
+            }
+            else {
+                freqGerada.innerHTML = `Frequência: ${freq}`;
+            }
+        }
+    </script>
+</body>
+</html>

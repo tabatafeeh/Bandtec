@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+</head>
+<body>
+    <button onclick="jogador1()">Jogador 1 jogar dadinho</button>
+    <p id="r1"></p>
+    <button onclick="jogador2()">Jogador 2 jogar dadinho</button>
+    <p id="r2"></p>
+    <p id="vencedor"></p>
+
+    <script>
+        function jogador1() {
+            dado1 = Math.trunc((Math.random() * 6) + 1);
+            r1.innerHTML = dado1;
+
+            // if (dado2 > dado1) {
+            //     vencedor.innerHTML = `Jogador 2 venceu`;
+            // }
+            // else if (dado1 > dado2) {
+            //     vencedor.innerHTML = `Jogador 1 venceu`;
+            // }
+            // else {
+            //     vencedor.innerHTML = `Empate`;
+            // }
+        }
+
+        function jogador2() {
+            dado2 = Math.trunc((Math.random() * 6) + 1);
+            r2.innerHTML = dado2;
+
+            if (dado2 > dado1) {
+                vencedor.innerHTML = `Jogador 2 venceu`;
+            }
+            else if (dado1 > dado2) {
+                vencedor.innerHTML = `Jogador 1 venceu`;
+            }
+            else {
+                vencedor.innerHTML = `Empate`;
+            }
+        }
+    </script>
+</body>
+</html>

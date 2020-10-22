@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+</head>
+<body>
+    <button onclick="cabalistico()">Quero um cabalistico</button>
+    <p id="resp"></p>
+
+    <script>
+        function cabalistico() {
+            var n = Math.trunc((Math.random() * 15) + 1);
+            console.log(n);
+            
+            if (n == 3 || n == 4 || n == 7 || n == 10 || n == 12) {
+                resp.innerHTML = "Eu S2 números cabalísticos!";
+            }
+            else {
+                resp.innerHTML = "Ah, me dá um número bom na próxima!";
+            }
+        }
+    </script>
+</body>
+</html>

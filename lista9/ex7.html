@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 7</title>
+</head>
+<body>
+    <button onclick="jogar()">Jogar dado</button>
+    <br><br>
+    <img src="" id="imagem" style="width: 80px;">
+
+    <script>
+        function jogar() {
+            var nDado = Math.trunc((Math.random() * 6) + 1);
+            imagem.src = `${nDado}.png`;
+        }
+    </script>
+</body>
+</html>
