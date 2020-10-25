@@ -1,0 +1,147 @@
+<!-- 
+    QUESTÃO UNICA:
+
+    CADEIRAMOR é uma fábrica de cadeiras para praia e jardim que tem 10 lojas situadas no estado de São Paulo. Faça um programa em HTML/JS para automatizar o orçamento de vendas.
+
+1.       Tenha três campos de entrada – loja, conta e dígito e um botão “conferir”.
+
+
+
+2.       Ao clicar no botão validar os campos de entrada da seguinte forma:
+
+    a)       Se a loja está entre 1 e 10, caso contrário emitir alerta: “Loja invalida”;
+
+    b)      Emitir alerta “Conta invalida” se ela for menor ou igual a zero;
+
+    c)       O digito tem que ser 1 quando o resto da divisão da conta pela loja for menor que 3.  O digito tem que ser 2 quando o resto da divisão da conta pela loja estiver entre 3 e 6. O digito tem que ser 3 quando o resto da divisão da conta pela loja for acima de 6. Caso contrário emitir alerta: “Digito invalido”.
+
+
+
+3.       Quando loja, conta e digito estiverem válidos:
+
+   a)       Apagar o que está na tela e mostrar a mensagem “Olá cliente entre com a sua senha”.
+
+   b)      Abaixo da mensagem mostrar um campo para receber a senha;
+
+   c)       Abaixo da senha dois botões: “Limpar” e “Entrar”
+
+
+
+4.       Quando clicar no botão “Limpar”, apagar o conteúdo do campo senha.
+
+
+
+5.       Quando clicar no botão “Entrar”, validar a senha da seguinte forma:
+
+   a)       Se o digito for 1 a senha tem que ser “recife”
+
+   b)      Se o digito for 2 a senha tem que ser “manaus”
+
+   c)       Se o digito for 3 a senha tem que ser “fortaleza”.
+
+   OBS1. A cada tentativa de senha invalida emitir uma nova mensagem “senha invalida” (sem apagar a mensagem anterior).
+
+   OBS2. Na quarta tentativa de senha invalida emitir um alerta "Você excedeu o número de tentativas, sua conta está bloqueada, PROCURE O SUPORTE" e voltar ao item a) 1. .
+
+   #ficadica, neste caso não esqueça de limpar o contador de tentativas e os campos de entrada.
+
+
+
+6.       Quando a senha for válida limpar tudo o que estava na tela e mostrar uma combo select com as seguintes opções de produto: “cadeira de praia” e “cadeira de jardim”.
+
+
+
+7.       Ao selecionar um dos produtos mostrar uma foto da cadeira selecionada com 150 px de altura e abaixo da foto mostrar também nova combo select com as seguintes opções de material: “alumínio”, “plástico” e “ferro”.
+
+
+
+8.       Ao selecionar um dos materiais, mostrar um campo para a entrada da quantidade de cadeiras desejada e um botão “calcular”. A quantidade tem que ser maior que zero.
+
+
+
+9.       Quando o botão for clicado, calcular o valor do orçamento considerando que:
+
+   a)       Cada cadeira de praia de alumínio custa R$ 75,00
+
+   b)      Cada cadeira de praia de plástico custa R$ 50,00
+
+   c)       Cada cadeira de praia de ferro custa R$ 80,00
+
+   d)      Cada cadeira de jardim de alumínio custa R$ 70,00
+
+   e)      Cada cadeira de jardim de plástico custa R$ 35,00
+
+   f)        Cada cadeira de jardim de ferro custa R$ 55,00
+
+   OBS1 - Para quantidade maior 50 conceder um desconto de 3%.
+
+
+
+10.   Abaixo do botão emitir a mensagem: “O orçamento para a compra de xxx yyy de zzz é R$ 99,99”, onde xxx = quantidade de cadeiras, yyy = é o produto selecionado, zzz é o material escolhido e 99,99 é o valor do orçamento calculado.
+
+
+
+11.   Abaixo do item acima emitir a mensagem: “Para pagamento a vista o desconto é de kk% e seu pedido ficará por R$ 77,77”, onde: kk = 5% se o material for “plástico” ou “ferro” ou kk=3,5% se o material for “alumínio”;
+
+
+ -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadeiramor</title>
+</head>
+<body>
+    <!-- TELA INICIAL -->
+    <div id="content">
+        <p>Loja</p>
+        <input type="text" id="loja">
+        <p>Conta</p>
+        <input type="text" id="conta">
+        <p>Dígito</p>
+        <input type="text" id="digito">
+        <br><br>
+        <button onclick="conferir()">Conferir</button>
+    </div>
+
+    <!-- TELA PARA DIGITAR A SENHA -->
+    <div id="telaSenha" style="display: none;">
+        <p>Olá cliente entre com sua senha</p>
+        <input id="pass">
+        <br><br>
+        <button id="limpar" onclick="limpar()">Limpar</button>
+        <Button id="entrar" onclick="entrar()">Entrar</Button>
+        <div id="res"></div>
+    </div>
+
+    <!-- TELA COMBO BOX PARA SELECIONAR O TIPO DE CADEIRA -->
+    <div id="cadeira" style="display: none;">
+        <select id="comboCadeira" onchange="cbCadeira()">
+            <option value="0">-- Selecione uma cadeira --</option>
+            <option value="1">Cadeira de praia</option>
+            <option value="2">Cadeira de jardim</option>
+        </select>
+        <img id="imgPraia" src="img/praia.jpg" style="display: none;">
+        <img id="imgJardim" src="img/jardim.jpeg" style="display: none;">
+        <br>
+        <select id="matCadeira" style="display: none;" onchange="material()">
+            <option value="0">-- Selecione um tipo de material --</option>
+            <option value="aluminio">Alumínio</option>
+            <option value="plastico">Plástico</option>
+            <option value="ferro">Ferro</option>
+        </select>
+    </div>
+    
+    <div id="qCadeiras" style="display: none;">
+        <p>Digite a quantidade de cadeiras desejada:</p>
+        <input type="text" id="nCadeiras">
+        <br><br>
+        <button onclick="calcular()">Calcular</button>
+        <div id="respCalculo"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
